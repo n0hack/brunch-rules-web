@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import banner from '@/assets/banner.jpg';
+import ming from '@/assets/ming.png';
+import joongdok from '@/assets/joongdok.png';
+---
+
+<main class="w-full mx-auto max-w-3xl">
+  <article class="px-6 pt-8 pb-20">
+    <header>
+      <Image src={banner} alt="배너" class="h-[120px] w-full object-cover rounded-lg lg:h-full" />
+      <h1 class="text-3xl font-bold mt-4 lg:mt-8">브런치 길드 규칙</h1>
+      <div class="flex gap-2 mt-4">
+        <div class="rounded-full px-3 py-1 bg-gray-100 text-gray-700 font-semibold text-sm">#공지사항</div>
+        <div class="rounded-full px-3 py-1 bg-gray-100 text-gray-700 font-semibold text-sm">#규칙</div>
+        <div class="rounded-full px-3 py-1 bg-gray-100 text-gray-700 font-semibold text-sm">#필독</div>
+      </div>
+      <div class="mt-4">
+        <div class="flex gap-3 items-center">
+          <div class="flex items-center gap-2">
+            <Image src={ming} alt="밍" class="w-7 h-7 rounded-full border border-gray-200" />
+            <div class="font-semibold">밍(길마)</div>
+          </div>
+          <span class="text-gray-200">|</span>
+          <div class="flex items-center gap-2">
+            <Image src={joongdok} alt="중독" class="w-7 h-7 rounded-full border border-gray-200" />
+            <div class="font-semibold">중독(부길마)</div>
+          </div>
+        </div>
+        <div class="text-gray-400 font-semibold mt-1 lg:mt-2">2025년 01월 25일</div>
+      </div>
+    </header>
+    <slot />
+  </article>
+</main>

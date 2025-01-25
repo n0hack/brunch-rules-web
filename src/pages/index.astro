@@ -1,11 +1,26 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import * as rules from '@/post/rules.md';
+import '../global.css';
+import Main from '@/components/Main.astro';
+import Header from '@/components/Header.astro';
+import PostLayout from '@/components/PostLayout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const { Content } = rules;
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>브런치 길드 규칙</title>
+  </head>
+  <body class="font-suit">
+    <Header />
+    <Main>
+      <PostLayout>
+        <Content />
+      </PostLayout>
+    </Main>
+  </body>
+</html>
